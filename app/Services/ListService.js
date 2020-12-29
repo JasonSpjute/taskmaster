@@ -1,12 +1,15 @@
+import { ProxyState } from "../AppState.js";
 import List from "../Models/List.js";
 
 class ListService {
   constructor() {
     console.log("service is working");
   }
-  createList() {
+  createList(rawList) {
     console.log("creating list from service");
-    let list = new List();
+    let list = new List(rawList);
+    let lists = ProxyState.lists
+    lists.push(list)
   }
 }
 

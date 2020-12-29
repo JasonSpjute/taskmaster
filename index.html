@@ -31,20 +31,21 @@
     </header>
 
     <main class="container-fluid">
-      <form class="form-inline my-3" onsubmit="app.listController.createList()">
+      <form class="form-inline my-3" onsubmit="app.listController.createList(event)">
         <input
           type="text"
           required
           class="form-control mr-2"
-          id="listTitle"
+          id="title"
           placeholder="List Title"
         />
-        <label for="listColor" class="ml-3 mr-1">Color:</label>
-            <input type="color" id="listColor" class=" mr-3">
-        <!-- <div class="custom-control custom-radio custom-control-inline">
+        <!-- <label for="listColor" class="ml-3 mr-1">Color:</label>
+            <input type="color" id="listColor" class=" mr-3"> -->
+        <div class="custom-control custom-radio custom-control-inline">
           <input
             type="radio"
             required
+            value="danger"
             id="red"
             name="colors"
             class="custom-control-input"
@@ -56,10 +57,11 @@
             type="radio"
             required
             id="green"
+            value="secondary"
             name="colors"
             class="custom-control-input"
           />
-          <label class="custom-control-label" for="green">Green</label>
+          <label class="custom-control-label" for="green">Pink</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
 
@@ -67,16 +69,18 @@
             type="radio"
             required
             id="yellow"
+            value="warning"
             name="colors"
             class="custom-control-input"/>
 
-          <label class="custom-control-label" for="yellow">Yellow</label>
+          <label class="custom-control-label" for="yellow">Orange</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
           <input
             type="radio"
             required
             id="blue"
+            value="primary"
             name="colors"
             class="custom-control-input"
           />
@@ -87,15 +91,19 @@
             type="radio"
             required
             id="black"
+            value="success"
             name="colors"
             class="custom-control-input"
           />
-          <label class="custom-control-label" for="black">Black</label>
-        </div> -->
+          <label class="custom-control-label" for="black">Green</label>
+        </div>
         <div>
           <button type="submit" class="btn btn-primary">Create</button>
         </div>
       </form>
+      <div class ="row" id="lists">
+
+      </div>
     </main>
 
     <footer class="container-fluid bg-dark text-light">

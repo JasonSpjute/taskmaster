@@ -1,3 +1,4 @@
+import { ProxyState } from "../AppState.js";
 import { generateId } from "../Utils/GenerateId.js";
 
 export default class List {
@@ -9,21 +10,27 @@ export default class List {
   get Template() {
     return /*html*/ `
         <div class="col-4">    
-          <div class="card border-${this.bgColor}">
+          <div class="card my-3 border-${this.bgColor} shadow">
             <div class="card-header text-right bg-${this.bgColor}">
               <button class="btn" onclick="app.listController.deleteList('${this.listId}')">X</button>
               <h5 class="text-center">${this.title}</h5>
             </div>
               <div class="card-body">
-                <p class="card-text">a list thing goes here</p>
-                <p class="card-text">a list thing goes here</p>
-                <p class="card-text">a list thing goes here</p>
+                ${this.Items}
               </div>
-              <div class="form-inline align-self-center py-3">
-                <input type="text" class="form-control" id="listItem" placeholder="Add Task" required>
+              <form class="form-inline align-self-center py-3" onsubmit="app.itemController.createItem('${this.listId}')">
+                <input type="text" class="form-control" name="listItem" id="listItem" placeholder="Add Task" required>
                 <button type="submit" class="btn btn-outline-info">+</button>
-              </div>
+              </form>
             </div>
           </div>`;
   }
+  get Items(){
+    let template = ""
+    let items = ProxyState.items.filter(l => l.listId == this.listId)
+    items.forEach(l=> template += l.Template)
+    return template
+  }
 }
+
+

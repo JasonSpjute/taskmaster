@@ -10,8 +10,8 @@ class ListService {
     lists.push(list)
   }
   deleteList(listId) {
-    let listIndex = ProxyState.lists.findIndex(list => list.listId == listId);
-    ProxyState.lists.splice(listIndex, 1);
+    ProxyState.lists = ProxyState.lists.filter(p => p.listId != listId);
+
   }
 }
 

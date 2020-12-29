@@ -12,6 +12,8 @@ function _draw(){
 export default class ListController {
   constructor() {
     console.log("hello from the controller");
+    ProxyState.on("lists", _draw)
+    ProxyState.on("items", _draw)
     _draw();
   }
   createList(event) {

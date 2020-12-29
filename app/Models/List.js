@@ -1,12 +1,12 @@
-import { generateId } from "../Utils/GenerateId.js"
+import { generateId } from "../Utils/GenerateId.js";
 
-export default class List{
-    constructor(title, listId){
-        this.title = title
-        this.listId = listId || generateId()
-    }
-    get Template{
-        return /*html*/ `
+export default class List {
+  constructor(title, listId) {
+    this.title = title;
+    this.listId = listId || generateId();
+  }
+  get Template() {
+    return /*html*/ `
             <div class="row">
             <div class="col-4">    
                 <div class="card border-primary">
@@ -22,6 +22,6 @@ export default class List{
                     </div>
                 </div>
             </div>
-        </div>`
-    }
+        </div>`;
+  }
 }

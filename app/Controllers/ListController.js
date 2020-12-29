@@ -23,7 +23,12 @@ export default class ListController {
     }
     
     ListService.createList(rawList);
-    _draw()
-    form.reset()
+    _draw();
+    form.reset();
+  }
+
+  deleteList(listId){
+    ListService.deleteList(listId);
+    _draw();
   }
 }

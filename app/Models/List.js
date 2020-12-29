@@ -10,7 +10,10 @@ export default class List {
     return /*html*/ `
         <div class="col-4">    
           <div class="card border-${this.bgColor}">
-            <h5 class="card-header bg-${this.bgColor}">${this.title}</h5>
+            <div class="card-header text-right bg-${this.bgColor}">
+              <button class="btn" onclick="app.listController.deleteList('${this.listId}')">X</button>
+              <h5 class="text-center">${this.title}</h5>
+            </div>
               <div class="card-body">
                 <p class="card-text">a list thing goes here</p>
                 <p class="card-text">a list thing goes here</p>

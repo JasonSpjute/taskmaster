@@ -5,6 +5,8 @@ export default class ListController{
     }
     createList(){
         window.event.preventDefault()
-        console.log("create list")
+        let form = window.event.target
+        console.log("create list from controller")
+        ListService.createList()
     }
 }

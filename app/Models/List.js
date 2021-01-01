@@ -13,7 +13,7 @@ export default class List {
           <div class="card my-3 border-${this.bgColor} shadow">
             <div class="card-header text-right bg-${this.bgColor}">
               <button class="btn" onclick="app.listController.deleteList('${this.listId}')">X</button>
-              <h5 class="text-center">${this.title}</h5>
+              <h2 class="text-center">${this.title}</h2>
             </div>
               <div class="card-body">
                 ${this.Items}

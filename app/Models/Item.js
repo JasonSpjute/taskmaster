@@ -10,8 +10,11 @@ export default class Item {
   get Template() {
     return /*html*/ `
         <div class="row">
-            <div class="col">
-                <h2>${this.words}</h2>
+            <div class="col-11">
+                <h6>${this.words}</h6>
+            </div>
+            <div class="col-1">
+                <i class="fas fa-trash-alt btn text-danger"></i>
             </div>
         </div>
         `;

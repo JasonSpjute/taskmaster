@@ -14,7 +14,7 @@ export default class Item {
                 <h6>${this.words}</h6>
             </div>
             <div class="col-1">
-                <i class="fas fa-trash-alt btn text-danger" onclick="app.itemController.delete('${this.id}'}"></i>
+                <i class="fas fa-trash-alt btn text-danger" onclick="app.itemController.delete('${this.id}'})"></i>
             </div>
         </div>
         `;

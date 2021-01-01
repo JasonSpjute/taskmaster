@@ -1,3 +1,4 @@
+import { ProxyState } from "../AppState.js";
 import { itemService } from "../Services/ItemService.js";
 
 export default class ItemController {
@@ -11,5 +12,8 @@ export default class ItemController {
     };
     itemService.createItem(rawItem);
     form.reset();
+  }
+  delete(id){
+      itemService.delete(id)
   }
 }

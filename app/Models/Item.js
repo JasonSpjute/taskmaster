@@ -5,14 +5,14 @@ export default class Item {
     this.words = words;
     this.itemId = itemId || generateId();
     this.listId = listId;
-    this.complete = complete || false
+    this.complete = complete || ""
   }
 
   get Template() {
     return /*html*/ `
         <div class="row">
             <div class="col-1 text-center">
-              <input id="${this.itemId}" type="checkbox" onchange="app.itemController.complete('${this.itemId}')">
+              <input id="${this.itemId}" type="checkbox" onchange="app.itemController.complete('${this.itemId}')" ${this.complete}>
               </div>
             <div class="col-9">
                 <h6>${this.words}</h6>

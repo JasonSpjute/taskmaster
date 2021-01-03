@@ -10,11 +10,11 @@ export default class Item {
   get Template() {
     return /*html*/ `
         <div class="row">
-            <div class="col-11">
+            <div class="col-10">
                 <h6>${this.words}</h6>
             </div>
             <div class="col-1">
-                <i class="fas fa-trash-alt btn text-danger" onclick="app.itemController.delete('${this.id}'})"></i>
+                <button class="fas fa-trash-alt btn text-danger" onclick="app.itemController.delete('${this.id}')"></button>
             </div>
         </div>
         `;

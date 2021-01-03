@@ -16,15 +16,15 @@ export default class ItemController {
     form.reset();
   }
 
-  complete(id){
-    itemService.complete(id)
-    console.log(id)
+  complete(itemId){
+    itemService.complete(itemId)
+    console.log(itemId)
   }
-  delete(id){
+  delete(itemId){
     let ok = confirm("Are you sure you want to delete this item?")
     console.log(ok)
     if (ok == true){
-      itemService.delete(id);
+      itemService.delete(itemId);
     }
       
   }

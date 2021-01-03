@@ -1,9 +1,9 @@
 import { generateId } from "../Utils/GenerateId.js";
 
 export default class Item {
-  constructor({ words, id, listId, complete}){
+  constructor({ words, itemId, listId, complete}){
     this.words = words;
-    this.id = id || generateId();
+    this.itemId = itemId || generateId();
     this.listId = listId;
     this.complete = complete || false
   }
@@ -12,7 +12,7 @@ export default class Item {
     return /*html*/ `
         <div class="row">
             <div class="col-1 text-center">
-              <input id="${this.id}" type="checkbox" onchange="app.itemController.complete('${this.id}')">
+              <input id="${this.itemId}" type="checkbox" onchange="app.itemController.complete('${this.itemId}')">
               </div>
             <div class="col-9">
                 <h6>${this.words}</h6>

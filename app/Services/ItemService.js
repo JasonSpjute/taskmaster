@@ -3,12 +3,11 @@ import Item from "../Models/Item.js"
 import { saveState } from "../Utils/LocalStorage.js"
 
 class ItemService{
-    complete(id) {
-        debugger
-        let check = ProxyState.items.find(f=>f.id=id)
+    complete(itemId) {
+        let check = ProxyState.items.find(f=>f.itemId=itemId)
         console.log(check)
         // @ts-ignore
-        let checker = document.getElementById(id).checked
+        let checker = document.getElementById(itemId).checked
         check.complete = checker
         
         ProxyState.items=ProxyState.items
@@ -20,8 +19,8 @@ class ItemService{
 
     
      }
-    delete(id) {
-        ProxyState.items = ProxyState.items.filter(p => p.id != id)
+    delete(itemId) {
+        ProxyState.items = ProxyState.items.filter(p => p.itemId != itemId)
     }
     createItem(rawItem){
         let items = ProxyState.items

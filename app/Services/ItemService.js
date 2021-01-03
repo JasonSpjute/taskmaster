@@ -4,18 +4,21 @@ import { saveState } from "../Utils/LocalStorage.js"
 
 class ItemService{
     complete(id) {
+        debugger
         let check = ProxyState.items.find(f=>f.id=id)
-        if (document.getElementById(id).checked = true){
-            check.complete = "checked"
-        } else {
-            check.complete = ""
-        }
-        ProxyState.items = ProxyState.items
+        console.log(check)
+        // @ts-ignore
+        let checker = document.getElementById(id).checked
+        check.complete = checker
+        
+        ProxyState.items=ProxyState.items
         console.log(ProxyState.items)
+        
+        
      
     
-    //     ProxyState.items = ProxyState.items
-    console.log(check.complete)
+
+    
      }
     delete(id) {
         ProxyState.items = ProxyState.items.filter(p => p.id != id)

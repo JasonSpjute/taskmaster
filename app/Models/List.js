@@ -14,6 +14,7 @@ export default class List {
             <div class="card-header text-right bg-${this.bgColor}">
               <button class="btn" onclick="app.listController.deleteList('${this.listId}')">X</button>
               <h2 class="text-center">${this.title}</h2>
+              <h4 class="text-center">${this.length}</h4>
             </div>
               <div class="card-body">
                 ${this.Items}
@@ -30,6 +31,10 @@ export default class List {
     let items = ProxyState.items.filter(l => l.listId == this.listId)
     items.forEach(l=> template += l.Template)
     return template
+  }
+  get length(){
+    let items = ProxyState.items.filter(l => l.listId == this.listId)
+    return items.length
   }
 }
 

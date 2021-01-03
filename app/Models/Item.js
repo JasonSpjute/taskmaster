@@ -10,7 +10,10 @@ export default class Item {
   get Template() {
     return /*html*/ `
         <div class="row">
-            <div class="col-10">
+            <div class="col-1 form-check text-center">
+              <input class="form-check-input" type="checkbox">
+            </div>
+            <div class="col-9">
                 <h6>${this.words}</h6>
             </div>
             <div class="col-1">

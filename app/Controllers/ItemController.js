@@ -21,7 +21,11 @@ export default class ItemController {
     
   }
   delete(id){
-    console.log("item delete")
-      itemService.delete(id)
+    let ok = confirm("Are you sure you want to delete this item?")
+    console.log(ok)
+    if (ok == true){
+      itemService.delete(id);
+    }
+      
   }
 }

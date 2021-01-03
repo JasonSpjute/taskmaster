@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js"
 import Item from "../Models/Item.js"
+import { saveState } from "../Utils/LocalStorage.js"
 
 class ItemService{
     complete(id) {
@@ -24,6 +25,9 @@ class ItemService{
         items.push(new Item(rawItem))
         ProxyState.items = items
         console.log(items)
+    }
+    constructor(){
+        ProxyState.on("items", saveState)
     }
     
 }

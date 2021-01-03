@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import List from "../Models/List.js";
+import { saveState } from "../Utils/LocalStorage.js";
 
 class ListService {
 
@@ -12,6 +13,9 @@ class ListService {
   deleteList(listId) {
     ProxyState.lists = ProxyState.lists.filter(p => p.listId != listId);
     ProxyState.items = ProxyState.items.filter(p => p.listId != listId);
+  }
+  constructor(){
+    ProxyState.on("lists", saveState)
   }
 }
 

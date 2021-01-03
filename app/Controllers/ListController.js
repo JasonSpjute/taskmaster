@@ -30,7 +30,11 @@ export default class ListController {
   }
 
   deleteList(listId){
+    let ok = confirm("Are you sure you want to delete this list?")
+    console.log(ok)
+    if (ok == true){
     ListService.deleteList(listId);
     _draw();
+    }
   }
 }

@@ -20,7 +20,7 @@ export default class List {
                 ${this.Items}
               </div>
               <form class="form-inline align-self-center py-3" onsubmit="app.itemController.createItem('${this.listId}')">
-                <input type="text" class="form-control" name="listItem" id="listItem" placeholder="Add Task" required>
+                <input type="text" class="form-control" name="listItem" id="${this.listId}" placeholder="Add Task" required>
                 <button type="submit" class="btn btn-outline-info">+</button>
               </form>
             </div>

@@ -15,6 +15,11 @@ export default class ItemController {
     // @ts-ignore
     form.reset();
   }
+
+  complete(id){
+    itemService.complete(id)
+    
+  }
   delete(id){
     console.log("item delete")
       itemService.delete(id)

@@ -1,11 +1,11 @@
 import { generateId } from "../Utils/GenerateId.js";
 
 export default class Item {
-  constructor({ words, itemId, listId, complete}){
+  constructor({ words, itemId, listId, complete }) {
     this.words = words;
     this.itemId = itemId || generateId();
     this.listId = listId;
-    this.complete = complete || ""
+    this.complete = complete || "";
   }
 
   get Template() {

@@ -2,7 +2,7 @@ import { ProxyState } from "../AppState.js";
 import { generateId } from "../Utils/GenerateId.js";
 
 export default class List {
-  constructor({title, bgColor, listId}) {
+  constructor({ title, bgColor, listId }) {
     this.title = title;
     this.bgColor = bgColor;
     this.listId = listId || generateId();
@@ -26,22 +26,20 @@ export default class List {
             </div>
           </div>`;
   }
-  get Items(){
-    let template = ""
-    let items = ProxyState.items.filter(l => l.listId == this.listId)
-    items.forEach(l=> template += l.Template)
-    return template
+  get Items() {
+    let template = "";
+    let items = ProxyState.items.filter((l) => l.listId == this.listId);
+    items.forEach((l) => (template += l.Template));
+    return template;
   }
 
-  get Checked(){
-    let items = ProxyState.items.filter(l => l.listId == this.listId)
-    let ants = items.filter(p => p.complete === "checked")
-    return ants.length
+  get Checked() {
+    let items = ProxyState.items.filter((l) => l.listId == this.listId);
+    let ants = items.filter((p) => p.complete === "checked");
+    return ants.length;
   }
-  get length(){
-    let items = ProxyState.items.filter(l => l.listId == this.listId)
-    return items.length
+  get length() {
+    let items = ProxyState.items.filter((l) => l.listId == this.listId);
+    return items.length;
   }
 }
-
-
